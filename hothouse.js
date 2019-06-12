@@ -13,7 +13,7 @@ nightmare
   .end()
   .then(response => {
     console.log(getData(response));
-    fs.writeFileSync('hothouse.json', JSON.stringify(getData(response)));
+    fs.writeFileSync('events.js', JSON.stringify(getData(response)));
   }).catch(err => {
     console.log(err);
   });
