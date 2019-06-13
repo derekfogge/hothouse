@@ -13,7 +13,7 @@ nightmare
   .end()
   .then(response => {
     console.log(getData(response));
-    fs.writeFileSync('events.js', JSON.stringify(getData(response)));
+    fs.writeFileSync('hothouse.json', JSON.stringify(getData(response, null, 2)));
   }).catch(err => {
     console.log(err);
   });
@@ -31,10 +31,10 @@ let getData = html => {
       desc    : $(elem).find('span.evcal_desc_info').text(),
       day     : $(elem).find('em.evo_day').text(),
       month   : $(elem).find('span.start em').text(),
-      date    : $(elem).find('span.end').text(),
+      date    : $(elem).find('em.evo_date span.end').text(),
       time    : $(elem).find('em.evcal_time').text(),
-      venue   : $(elem).find('em.evcal_location').text(),
-      address : $(elem).find('em.evcal_location.event_location_name').text(),
+      venue   : $(elem).find('em.evcal_location:nth-child(odd)').text(),
+      address : $(elem).find('em.evcal_location.event_location_name:nth-child(even)').text(),
       city    : $(elem).find('span.evcal_desc3').text(),
       phone   : $(elem).find('em.evcal_cmd').text()
     });
