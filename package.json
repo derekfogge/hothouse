@@ -13,6 +13,6 @@
   "dependencies": {
     "cheerio": "^1.0.0-rc.3",
     "nightmare": "^3.0.2",
-    "simple-git": "^1.113.0"
+    "simple-git": "^3.5.0"
   }
 }
